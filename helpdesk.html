@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CWA Help Desk Appointment form for Swinburne University students to book support sessions with tutors.">
+    <meta name="keywords" content="Swinburne, Help Desk, Appointment, Student, HTML form, COS10011, COS60004, COS60007">
+    <meta name="author" content="WAI PHYO HTET">
+
+    <title>CWA Help Desk Appointment</title>
+
+    <style>
+        /* Basic form styling */
+        form {
+            max-width: 600px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- University logo with link -->
+    <p>
+        <a href="http://www.swin.edu.au">
+            <img src="logo.png" alt="logo" title="swin logo" />
+        </a>
+    </p>
+
+    <!-- Page heading -->
+    <h1>CWA Help Desk Appointment</h1>
+
+    <!-- Help desk information -->
+    <p>The Help Desk is located in ATC620. Open 10.30 to 19.00 Monday to Friday</p>
+    <p>Check Blackboard for when CWA tutors will be there</p>
+
+    <!-- Appointment booking form -->
+    <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
+
+        <!-- Student Details Section -->
+        <fieldset>
+            <legend>Student Details</legend>
+
+            <p>
+                <!-- Enter your Student ID -->
+                <label for="studentID">Student ID:</label>
+                <input type="text" name="studentID" id="studentID"
+                       required pattern="\d{7,10}">
+                <br><br>
+
+                <!-- Given Name -->
+                <label for="givenName">Given Name:</label>
+                <input type="text" name="givenName" id="givenName"
+                       required maxlength="15" pattern="[A-Za-z]+">
+
+                <!-- Family Name -->
+                <label for="familyName">Family Name:</label>
+                <input type="text" name="familyName" id="familyName"
+                       required maxlength="15" pattern="[A-Za-z]+">
+            </p>
+        </fieldset>
+
+        <!-- Unit Selection Section -->
+        <fieldset>
+            <legend>Your Unit</legend>
+
+            <p>
+                <!-- Radio buttons for unit selection -->
+                <input type="radio" name="unit" id="COS10011" value="COS10011">
+                <label for="COS10011">COS10011</label>
+
+                <input type="radio" name="unit" id="COS60004" value="COS60004">
+                <label for="COS60004">COS60004</label>
+
+                <input type="radio" name="unit" id="COS60007" value="COS60007">
+                <label for="COS60007">COS60007</label>
+            </p>
+
+            <!-- Tutor selection dropdown -->
+            <p>
+                <label for="yourTutor">Your Tutor</label>
+                <select name="Tutor" id="yourTutor">
+                    <option value="">Please Select</option>
+                    <option value="Tutor1">Tutor 1</option>
+                    <option value="Tutor2">Tutor 2</option>
+                    <option value="Tutor3">Tutor 3</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <!-- Issue Section -->
+        <fieldset>
+            <legend>Issue</legend>
+
+            <!-- Checkboxes for issue type -->
+            <label for="html">HTML</label>
+            <input type="checkbox" id="html" name="issue" value="HTML" checked>
+
+            <label for="css">CSS</label>
+            <input type="checkbox" id="css" name="issue" value="CSS">
+
+            <label for="js">JavaScript</label>
+            <input type="checkbox" id="js" name="issue" value="JavaScript">
+
+            <label for="php">PHP</label>
+            <input type="checkbox" id="php" name="issue" value="PHP">
+
+            <label for="mysql">MySQL</label>
+            <input type="checkbox" id="mysql" name="issue" value="MySQL">
+
+            <!-- Issue description -->
+            <p>
+                <label for="description">Description of Issue</label><br>
+                <textarea id="description" name="description" rows="5" cols="30"
+                          placeholder="Write description of your problem here..." required></textarea>
+            </p>
+        </fieldset>
+
+        <!-- Preferred Date and Time Section -->
+        <fieldset>
+            <legend>Preferred Date / Time</legend>
+
+            <!-- Date input -->
+            <label for="date">Date:</label>
+            <input type="text" id="date" name="date"
+                   required placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}">
+            <br><br>
+
+            <!-- Time input -->
+            <label for="time">Time:</label>
+            <input type="text" id="time" name="time"
+                   required placeholder="00:00" pattern="\d{2}:\d{2}">
+            <br><br>
+        </fieldset>
+
+        <!-- Form buttons -->
+        <input type="submit" value="Book">
+        <input type="reset" value="Reset Form">
+
+    </form>
+
+</body>
+</html>
